@@ -51,3 +51,9 @@ console.log(namesToProvinces);
 console.log(products.map(product => product.product));
 
 console.log(products.filter(product => product.product.length <= 5));
+
+console.log(products
+  .filter(product => product.price !== '' && product.price !== ' ')
+  .map(product => ({ ...product, price: Number(product.price) }))
+  .reduce((total, product) => total + product.price, 0)
+);
