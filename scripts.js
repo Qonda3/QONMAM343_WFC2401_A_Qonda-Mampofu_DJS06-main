@@ -57,3 +57,5 @@ console.log(products
   .map(product => ({ ...product, price: Number(product.price) }))
   .reduce((total, product) => total + product.price, 0)
 );
+
+console.log(products.reduce((acc, product) => acc + product.product, ''));
