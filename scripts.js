@@ -49,3 +49,5 @@ console.log(namesToProvinces);
 
 //Iterate over the products array, logging each product name
 console.log(products.map(product => product.product));
+
+console.log(products.filter(product => product.product.length <= 5));
