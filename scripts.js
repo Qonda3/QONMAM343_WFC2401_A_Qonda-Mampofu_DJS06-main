@@ -36,3 +36,9 @@ console.log(nonCapeProvinces.length);
 
 const containsS = names.map(name => name.includes('S'));
 console.log(containsS);
+
+const namesToProvinces = names.reduce((obj, name, index) => {
+  obj[name] = provinces[index];
+  return obj;
+}, {});
+console.log(namesToProvinces);
