@@ -33,3 +33,6 @@ console.log(sortedProvinces);
 
 const nonCapeProvinces = provinces.filter(province => !province.includes('Cape'));
 console.log(nonCapeProvinces.length);
+
+const containsS = names.map(name => name.includes('S'));
+console.log(containsS);
