@@ -59,3 +59,12 @@ console.log(products
 );
 
 console.log(products.reduce((acc, product) => acc + product.product, ''));
+
+const pricedProducts = products
+  .filter(product => product.price !== '' && product.price !== ' ')
+  .map(product => ({ ...product, price: Number(product.price) }));
+
+const highestPriced = pricedProducts.reduce((max, product) => product.price > max.price ? product : max);
+const lowestPriced = pricedProducts.reduce((min, product) => product.price < min.price ? product : min);
+
+console.log(`Highest: ${highestPriced.product}. Lowest: ${lowestPriced.product}.`);
