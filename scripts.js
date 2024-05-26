@@ -42,3 +42,5 @@ const namesToProvinces = names.reduce((obj, name, index) => {
   return obj;
 }, {});
 console.log(namesToProvinces);
+
+console.log(products.map(product => product.product));
