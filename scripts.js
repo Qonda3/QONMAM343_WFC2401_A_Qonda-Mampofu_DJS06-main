@@ -28,19 +28,24 @@ console.log(upperCaseProvinces);
 const nameLengths = names.map(name => name.length);
 console.log(nameLengths);
 
+//Use sort to alphabetically sort the provinces.
 const sortedProvinces = [...provinces].sort();
 console.log(sortedProvinces);
 
+//Use filter to remove provinces containing "Cape". Log the count of remaining provinces.
 const nonCapeProvinces = provinces.filter(province => !province.includes('Cape'));
 console.log(nonCapeProvinces.length);
 
+//Create a boolean array using map and some to determine if a name contains the letter 'S'.
 const containsS = names.map(name => name.includes('S'));
 console.log(containsS);
 
+//Use reduce to transform the names array into an object mapping names to their respective provinces.
 const namesToProvinces = names.reduce((obj, name, index) => {
   obj[name] = provinces[index];
   return obj;
 }, {});
 console.log(namesToProvinces);
 
+//Iterate over the products array, logging each product name
 console.log(products.map(product => product.product));
