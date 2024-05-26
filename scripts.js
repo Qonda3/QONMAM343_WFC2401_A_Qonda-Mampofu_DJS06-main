@@ -68,3 +68,5 @@ const highestPriced = pricedProducts.reduce((max, product) => product.price > ma
 const lowestPriced = pricedProducts.reduce((min, product) => product.price < min.price ? product : min);
 
 console.log(`Highest: ${highestPriced.product}. Lowest: ${lowestPriced.product}.`);
+
+console.log(products.map(product => ({ name: product.product, cost: product.price })));
