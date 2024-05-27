@@ -50,16 +50,20 @@ console.log(namesToProvinces);
 //Iterate over the products array, logging each product name
 console.log(products.map(product => product.product));
 
+//Filter out products with names longer than 5 characters.
 console.log(products.filter(product => product.product.length <= 5));
 
+//Filter out products without prices, convert string prices to numbers, and calculate the total price using reduce.
 console.log(products
   .filter(product => product.price !== '' && product.price !== ' ')
   .map(product => ({ ...product, price: Number(product.price) }))
   .reduce((total, product) => total + product.price, 0)
 );
 
+//Use reduce to concatenate all product names into a single string
 console.log(products.reduce((acc, product) => acc + product.product, ''));
 
+//Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."
 const pricedProducts = products
   .filter(product => product.price !== '' && product.price !== ' ')
   .map(product => ({ ...product, price: Number(product.price) }));
@@ -69,4 +73,5 @@ const lowestPriced = pricedProducts.reduce((min, product) => product.price < min
 
 console.log(`Highest: ${highestPriced.product}. Lowest: ${lowestPriced.product}.`);
 
+//Using Object.entries and reduce, recreate the products object with keys 'name' and 'cost', maintaining their original values.
 console.log(products.map(product => ({ name: product.product, cost: product.price })));
